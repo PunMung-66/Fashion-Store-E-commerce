@@ -66,3 +66,7 @@
   }
 
 }
+
+.border-focus-primary:focus {
+  @apply border-primary;
+}

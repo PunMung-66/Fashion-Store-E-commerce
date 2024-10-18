@@ -35,7 +35,7 @@ const StarRating = ({ rating, maxRating = 5 }) => {
     return <Star key={index} filled={filledValue} />;
   });
 
-  return <div className="flex space-x-1">{stars}</div>;
+  return <div className="flex space-x-1 gap-3">{stars}</div>;
 };
 
 export default StarRating;
