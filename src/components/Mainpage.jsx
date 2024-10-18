@@ -1,6 +1,6 @@
 import React from "react";
+import StarRating from "./starRating"; // Import the StarRating component
 import headerPicture from "../assets/mainpage-photo/header-picture.png"; // Import the image
-import StarRating from "./StarRating"; // Import the StarRating component
 
 const Mainpage = () => {
   return (
@@ -8,7 +8,7 @@ const Mainpage = () => {
       {/* Header Image Section */}
       <div className="relative">
         <img
-          className="w-[1920px] h-[420px] object-cover"
+          className="w-full h-[420px] object-cover"
           src={headerPicture}
           alt="Header Image"
         />
@@ -36,7 +36,7 @@ const Mainpage = () => {
               comfort and fashion, as we present you with the must-have
               ensembles to make a statement in the chilly months ahead. Welcome
               to a winter wardrobe that seamlessly combines coziness with chic
-              aesthetics
+              aesthetics.
             </div>
           </div>
           {/* Right Column (Two Cards) */}
@@ -92,13 +92,13 @@ const Mainpage = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
             {/* Product Card */}
-            <div className="w-[267px] flex flex-col justify-start items-start gap-4 relative">
+            <div className="w-[267px] flex flex-col justify-start items-start gap-4">
               <img
-                className="w-full h-[370px] object-cover rounded-t-lg"
+                className="w-full h-[267px] object-cover rounded-t-lg"
                 src="https://via.placeholder.com/267x267"
                 alt="Product 1"
               />
-              <div className="absolute top-2 right-2 h-[34px] px-2.5 py-1 bg-[#ff000d] flex justify-start items-center gap-2">
+              <div className="h-[34px] px-2.5 py-1 bg-[#ff000d] flex justify-start items-center gap-2">
                 <div className="text-white text-base font-normal font-poppins leading-tight">
                   - 50%
                 </div>
@@ -107,13 +107,13 @@ const Mainpage = () => {
                 <div className="text-[#222222] text-2xl font-bold font-poppins leading-loose">
                   Reyon Long Sleeve Shirt
                 </div>
-                <div className="text-[#626262] text-base font-normal font-['Poppins'] leading-tight">
+                <div className="text-[#626262] text-base font-normal font-poppins leading-tight">
                   Elevate your winter style with our cozy flann...
                 </div>
                 <div className="flex justify-start items-center gap-2">
                   <StarRating rating={4} />
                 </div>
-                <div className="w-full flex justify-end items-center gap-2">
+                <div className="w-full flex justify-between items-center">
                   <div className="text-[#626262] text-sm font-normal font-poppins line-through leading-tight">
                     2,000
                   </div>
@@ -124,9 +124,9 @@ const Mainpage = () => {
               </div>
             </div>
             {/* Repeat similar structure for other products */}
-            <div className="w-[267px] flex flex-col justify-start items-start gap-4 relative">
+            <div className="w-[267px] flex flex-col justify-start items-start gap-4">
               <img
-                className="w-full h-[370px] object-cover rounded-t-lg"
+                className="w-full h-[267px] object-cover rounded-t-lg"
                 src="https://via.placeholder.com/267x267"
                 alt="Product 2"
               />
@@ -141,15 +141,15 @@ const Mainpage = () => {
                   <StarRating rating={4} />
                 </div>
                 <div className="w-full flex justify-between items-center">
-                  <div className="text-right text-[#222222] text-2xl font-bold font-poppins leading-loose ml-auto">
+                  <div className="text-right text-[#222222] text-2xl font-bold font-poppins leading-loose">
                     THB 1,600
                   </div>
                 </div>
               </div>
             </div>
-            <div className="w-[267px] flex flex-col justify-start items-start gap-4 relative">
+            <div className="w-[267px] flex flex-col justify-start items-start gap-4">
               <img
-                className="w-full h-[370px] object-cover rounded-t-lg"
+                className="w-full h-[267px] object-cover rounded-t-lg"
                 src="https://via.placeholder.com/267x267"
                 alt="Product 3"
               />
@@ -164,15 +164,15 @@ const Mainpage = () => {
                   <StarRating rating={4} />
                 </div>
                 <div className="w-full flex justify-between items-center">
-                  <div className="text-right text-[#222222] text-2xl font-bold font-poppins leading-loose ml-auto">
+                  <div className="text-right text-[#222222] text-2xl font-bold font-poppins leading-loose">
                     THB 1,200
                   </div>
                 </div>
               </div>
             </div>
-            <div className="w-[267px] flex flex-col justify-start items-start gap-4 relative">
+            <div className="w-[267px] flex flex-col justify-start items-start gap-4">
               <img
-                className="w-full h-[370px] object-cover rounded-t-lg"
+                className="w-full h-[267px] object-cover rounded-t-lg"
                 src="https://via.placeholder.com/267x267"
                 alt="Product 4"
               />
@@ -187,7 +187,7 @@ const Mainpage = () => {
                   <StarRating rating={4} />
                 </div>
                 <div className="w-full flex justify-between items-center">
-                  <div className="text-right text-[#222222] text-2xl font-bold font-poppins leading-loose ml-auto">
+                  <div className="text-right text-[#222222] text-2xl font-bold font-poppins leading-loose">
                     THB 1,700.00
                   </div>
                 </div>

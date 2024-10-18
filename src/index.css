@@ -41,8 +41,11 @@
   .caption {
     @apply text-xs font-normal;
   }
-  .squre-group {
-    @apply w-10 aspect-square flex items-center justify-center;
+   ::-webkit-scrollbar {
+    @apply w-1;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-secondary-500 rounded-sm;
   }
 }
 
@@ -62,18 +65,4 @@
     @apply flex-row justify-between;
   }
 
-  .listitem {
-    @apply h-12 w-64 flex items-center justify-between p-2.5;
-    &:hover {
-      @apply bg-secondary-100;
-    }
-  }
-
-  .listitem:has(a.active) {
-    @apply bg-primary-500;
-  }
-
-  .navlink:has(a.active) {
-    @apply text-primary-500;
-  }
 }
