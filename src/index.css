@@ -41,8 +41,11 @@
   .caption {
     @apply text-xs font-normal;
   }
-  .squre-group {
-    @apply w-10 aspect-square flex items-center justify-center;
+   ::-webkit-scrollbar {
+    @apply w-1;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-secondary-500 rounded-sm;
   }
 }
 
