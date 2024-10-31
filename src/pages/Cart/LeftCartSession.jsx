@@ -70,7 +70,7 @@ function LeftCartSession() {
         <h6>Items</h6>
         <div className="flex flex-col gap-6">
           {data?.map((d, i) => (
-            <CartItem key={d + i} {...d} />
+            <CartItem key={d.skuCode} {...d} />
           ))}
         </div>
       </div>

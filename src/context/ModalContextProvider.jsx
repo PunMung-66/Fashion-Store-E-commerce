@@ -26,7 +26,7 @@ function ModalContextProvider({ children }) {
     setTitle(newTitle);
     setLeftProps(left);
     setRightProps({
-      label: "close",
+      label: "Close",
       onClick: () => {
         setIsShow(false);
         setContent(null);

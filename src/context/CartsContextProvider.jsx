@@ -34,11 +34,14 @@ function CartsContextProvider({ children }) {
   const saveLocalCart = saveToLocal(LOCALSTORAGE_KEY.carid);
   // derived state
   const isEmptyCart = !data || data.length === 0;
-  const summaryList = data?.map(({ name, promotionalPrice, quantity }) => ({
-    name,
-    quantity,
-    sum: promotionalPrice * quantity,
-  })) ?? [{ name: "no items", quantity: 0, sum: 0 }];
+  const summaryList = data?.map(
+    ({ name, promotionalPrice, quantity, skuCode }) => ({
+      name,
+      quantity,
+      skuCode,
+      sum: promotionalPrice * quantity,
+    })
+  ) ?? [{ name: "no items", quantity: 0, sum: 0 }];
   const subtotal = summaryList.reduce(
     ({ total, subtotal }, { quantity, sum }) => ({
       total: total + quantity,

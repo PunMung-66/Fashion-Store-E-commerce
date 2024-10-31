@@ -11,9 +11,9 @@ const CartModalConetnt = ({ summaryList, subtotal = 0, shipping = 0 }) => {
   return (
     <div className="w-full flex-col">
       <SummarySection>
-        {summaryList.map(({ name, sum, quantity }, i) => (
+        {summaryList.map(({ name, sum, quantity, skuCode }, i) => (
           <SummaryRow
-            key={"summary-with-item-" + name + i}
+            key={"summary-with-item-" + skuCode}
             name={`${name} ${quantity <= 1 ? "" : "X" + quantity}`}
             price={numberWithCommas(sum)}
             rightClassname="text-secondary-700"
@@ -131,9 +131,9 @@ function RightCartSession() {
         />
         {/* summary items */}
         <SummarySection>
-          {summaryList.map(({ name, sum, quantity }, i) => (
+          {summaryList.map(({ name, sum, quantity, skuCode }, i) => (
             <SummaryRow
-              key={"summary-with-item-" + name + i}
+              key={"summary-with-item-" + skuCode}
               name={`${name} ${quantity <= 1 ? "" : "X" + quantity}`}
               price={numberWithCommas(sum)}
               leftClassname={isEmptyCart ? "text-secondary-500" : ""}
