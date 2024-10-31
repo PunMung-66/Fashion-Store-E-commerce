@@ -81,6 +81,14 @@ function Clothing() {
     fetchProducts();
   }, [location.pathname]);
 
+  React.useEffect(() => {
+    if (products.length === 0) {
+      document.title = "No Products Found";
+    } else {
+      document.title = getPageTitle(category);
+    }
+  }, [products, window.location.pathname]);
+
   const sortProducts = (productsToSort) => {
     switch (sortOrder) {
       case "price-asc":
