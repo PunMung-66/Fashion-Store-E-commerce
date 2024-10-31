@@ -23,7 +23,7 @@ function ProductModal({
       });
     }
   }, [showModal]);
-  console.log(selectedProduct);
+
   const [q, _] = useSearchParams();
   const prev = q.get("prev");
   const navigate = useNavigate();

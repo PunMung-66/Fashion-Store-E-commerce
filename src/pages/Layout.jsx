@@ -3,9 +3,17 @@ import Header from "../components/header/Header";
 import { Outlet, useLocation } from "react-router-dom";
 import Footer from "../components/Footer";
 import GobalModal from "../components/GobalModal";
+import { formatTitle } from "../utils/tittile";
 
 function Layout() {
   const location = useLocation();
+  React.useEffect(() => {
+    const pathname = window.location.pathname;
+    const subdirectories = pathname.split("/");
+    const lastSubdirectory = subdirectories.pop();
+    lastSubdirectory || subdirectories.pop();
+    document.title = ` ${formatTitle(lastSubdirectory) || "WDB Home"}`;
+  }, [location.pathname]);
 
   React.useEffect(() => {
     window.scrollTo({

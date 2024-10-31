@@ -1,8 +1,12 @@
 import Header from "../components/header/Header";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
+import React from "react";
 
 function ErrorPage() {
+  React.useEffect(() => {
+    document.title = "WDB | 404 Not Found";
+  }, [window.location.pathname]);
   return (
     <>
       <Header />
