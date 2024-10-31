@@ -42,7 +42,7 @@ function Navbar({ children }) {
               to={"/"}
             >
               <img
-                src="../src/assets/logo/storefront.png"
+                src="/storefront.png"
                 alt="storefront-logo"
                 className="w-[37px] aspect-square"
               />
