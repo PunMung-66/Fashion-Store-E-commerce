@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import cozyImage from "../assets/cozy.jpg"; // Import cozy image
-import flexiImage from "../assets/flexi.jpg"; // Import flexi image
 import { useCollectionContext } from "../context/CollectionContextProvider";
 import { Link } from "react-router-dom";
 import Skeleton from "./Skeleton";
