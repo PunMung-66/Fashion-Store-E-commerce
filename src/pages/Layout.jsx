@@ -10,9 +10,13 @@ function Layout() {
   React.useEffect(() => {
     const pathname = window.location.pathname;
     const subdirectories = pathname.split("/");
-    const lastSubdirectory = subdirectories.pop();
-    lastSubdirectory || subdirectories.pop();
-    document.title = ` ${formatTitle(lastSubdirectory) || "WDB Home"}`;
+    if (subdirectories.includes("clothing")) {
+      return;
+    } else{
+      const lastSubdirectory = subdirectories.pop();
+      lastSubdirectory || subdirectories.pop();
+      document.title = ` ${formatTitle(lastSubdirectory) || "WDB Home"}`;
+    }
   }, [location.pathname]);
 
   React.useEffect(() => {
