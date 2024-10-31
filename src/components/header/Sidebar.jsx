@@ -118,7 +118,10 @@ function Sidebar({ isShow, onClick }) {
                 <li key={item.path} className="listitem">
                   <Link
                     className={`flex w-64 h-12 items-center justify-between font-normal ${
-                      location.pathname.includes(item.path)
+                      location.pathname.split("&")[0] ===
+                        genClothingList(item.path) ||
+                      location.pathname.split("&")[0].split("/clothing/")[1] ===
+                        item.path
                         ? "bg-[#DEF81C]"
                         : ""
                     }`}
@@ -130,7 +133,7 @@ function Sidebar({ isShow, onClick }) {
                 </li>
               ))}
 
-              {/* Collections Section as Dropdown */}
+              {/* Collections Section */}
               <li className="mt-4">
                 <button
                   className="flex w-full items-center justify-between text-lg font-semibold mb-2"
