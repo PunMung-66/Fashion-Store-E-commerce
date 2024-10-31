@@ -31,7 +31,7 @@ function CartsContextProvider({ children }) {
   const { isLoading, erorr, data, setLoading, setSuccess, setError, setEmpty } =
     useBaseState();
   const [cartId, setCartId] = React.useState(null);
-  const saveLocalCart = saveToLocal(LOCALSTORAGE_KEY.carid);
+  console.log(cartId);
   // derived state
   const isEmptyCart = !data || data.length === 0;
   const summaryList = data?.map(
@@ -69,7 +69,9 @@ function CartsContextProvider({ children }) {
     try {
       const validated = checkAddCartBody(body);
       const { id, items } = await postData("carts", { items: validated });
+      localStorage.setItem(LOCALSTORAGE_KEY.carid, id);
       setCartId(id);
+      console.log(cartId);
       const finalResult = await Promise.all(
         items.map((item) => getByPermalink(item))
       );
@@ -86,7 +88,6 @@ function CartsContextProvider({ children }) {
       const { id, items } = await postData(`carts/${cartId}/items`, {
         items: validated,
       });
-      setCartId(id);
       const finalResult = await Promise.all(
         items.map((item) => getByPermalink(item))
       );
@@ -96,11 +97,14 @@ function CartsContextProvider({ children }) {
     }
   };
   const addCart = async (body) => {
+    console.log("add", cartId);
     if (cartId) {
       await addExistCart(body);
       return;
     }
-    await addNewCart(body);
+    if (!cartId) {
+      await addNewCart(body);
+    }
   };
   //delete from existing cart
   const deleteCart = async (itemId) => {
@@ -168,21 +172,20 @@ function CartsContextProvider({ children }) {
   React.useEffect(() => {
     if (!cartId) {
       // no existing cart > try load from local storaage
-      const savedCart = loadLocal(LOCALSTORAGE_KEY.carid);
+      const stringData = localStorage.getItem(LOCALSTORAGE_KEY.carid);
+      if (!stringData) return;
+      const savedCart = JSON.stringify(stringData);
       if (savedCart) {
         setCartId(savedCart);
         loadCart(savedCart);
         return;
       }
+      return;
     }
     // if cart fetch
+    console.log(cartId);
     loadCart(cartId);
   }, []);
-  // svae Cart id
-  React.useEffect(() => {
-    if (!cartId) return;
-    saveLocalCart(cartId, 1);
-  }, [cartId]);
   // sync local cart to rtdb
   const { account } = useAuthContext();
   React.useEffect(() => {

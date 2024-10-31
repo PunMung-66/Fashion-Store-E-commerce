@@ -16,9 +16,9 @@ const Noti = ({ email }) => {
 function useSubsciption() {
   const [email, setEmail] = useState("");
   const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const invalid = (!emailReg.test(email) || email.length > 20) && email !== "";
+  const invalid = (!emailReg.test(email) || email.length > 40) && email !== "";
   const onChange = ({ target }) => setEmail(target.value);
-  const { setOpen, setIsShow, setContent } = useModalContext();
+  const { setOpen } = useModalContext();
   const submit = async () => {
     if (email === "") return;
     try {
