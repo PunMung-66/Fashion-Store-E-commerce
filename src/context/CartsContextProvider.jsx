@@ -5,7 +5,7 @@ import { checkAddCartBody, checkUpdateCartBody } from "../utils/cartValidator";
 import { useAuthContext } from "./AuthContextProvider";
 import { onValue, ref, set } from "firebase/database";
 import { db } from "../utils/firebase";
-import { loadLocal, LOCALSTORAGE_KEY, saveToLocal } from "../utils/loacl";
+import { LOCALSTORAGE_KEY } from "../utils/loacl";
 
 const CartContext = React.createContext(null);
 
@@ -69,9 +69,8 @@ function CartsContextProvider({ children }) {
     try {
       const validated = checkAddCartBody(body);
       const { id, items } = await postData("carts", { items: validated });
-      localStorage.setItem(LOCALSTORAGE_KEY.carid, id);
+      sessionStorage.setItem("new-cart", id);
       setCartId(id);
-      console.log(cartId);
       const finalResult = await Promise.all(
         items.map((item) => getByPermalink(item))
       );
@@ -97,7 +96,6 @@ function CartsContextProvider({ children }) {
     }
   };
   const addCart = async (body) => {
-    console.log("add", cartId);
     if (cartId) {
       await addExistCart(body);
       return;
@@ -172,7 +170,7 @@ function CartsContextProvider({ children }) {
   React.useEffect(() => {
     if (!cartId) {
       // no existing cart > try load from local storaage
-      const stringData = localStorage.getItem(LOCALSTORAGE_KEY.carid);
+      const stringData = sessionStorage.getItem("new-cart");
       if (!stringData) return;
       const savedCart = JSON.stringify(stringData);
       if (savedCart) {
