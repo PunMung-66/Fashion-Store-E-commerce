@@ -85,7 +85,16 @@ function Clothing() {
     if (products.length === 0) {
       document.title = "No Products Found";
     } else {
-      document.title = getPageTitle(category);
+      const pathname = window.location.pathname;
+      let collection = "";
+      if (pathname.includes("&")) {
+        const paramet = pathname.split("&");
+        collection = paramet.pop();
+      }
+
+      document.title = `${getPageTitle(category)} ${
+        collection ? `| ${collection}` : ""
+      }`;
     }
   }, [products, window.location.pathname]);
 
