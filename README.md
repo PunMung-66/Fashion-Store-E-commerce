@@ -26,7 +26,8 @@ This project is part of the final assignment for Skooldio Web Development Bootca
 1. Clone the repository:
 ```bash
 git clone https://github.com/yourusername/fashion-store.git](https://github.com/PunMung-66/Project-9-sandbox.git
-cd Project-9-sandbox
+
+cd Fashion-Store-E-commerce
 ```
 
 2. Install dependencies:
