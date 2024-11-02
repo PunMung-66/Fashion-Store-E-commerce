@@ -20,7 +20,7 @@ const ColloctionCard = ({ title, imageUrl, description, permalink }) => {
           {description}
         </div>
         <Link
-          to={`/clothing/&${permalink}`}
+          to={`/clothing/all-men&`}
           className="h-[54px] px-2.5 py-[7px] bg-[#222222] justify-center items-center gap-2 inline-flex"
         >
           <div className="text-white text-base font-normal font-['Poppins'] leading-tight">
