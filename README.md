@@ -50,7 +50,7 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
 - [React Icons](https://react-icons.github.io/react-icons/)
 - [Hero Icons](https://heroicons.com/)
 
-## Contributors
+## 🫱🏻‍🫲🏻 Contributors
 👨🏻 https://github.com/pongsathonwon
 
 👨🏻‍🦲 https://github.com/shampfy
