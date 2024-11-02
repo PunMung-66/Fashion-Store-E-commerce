@@ -5,31 +5,9 @@ A modern e-commerce clothing website built with React, Firebase, and Tailwind CS
 ## 🚀 Features
 
 - **Home Page**
-  - Featured products showcase
-  - New arrivals section
-  - Category navigation
-  - Responsive hero banner
-
 - **Product Listing**
-  - Filter by category, size, and price
-  - Sort by price, popularity, and newest
-  - Grid/List view toggle
-  - Pagination
-
 - **Product Details**
-  - High-resolution product images
-  - Size selection
-  - Color variants
-  - Add to cart functionality
-  - Product description
-  - Related products
-
 - **Shopping Cart**
-  - Add/Remove items
-  - Update quantities
-  - Price calculation
-  - Persistent cart data
-  - Checkout process
 
 ## 🛠️ Technologies
 
